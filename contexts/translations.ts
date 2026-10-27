@@ -100,7 +100,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'education.1.h1': 'Community Pharmacy Intern di Apotek Wahdah Abdesir (April–Mei 2026)',
     'education.1.h2': 'Industrial Pharmacy Intern di Lembaga Farmasi Pusat Kesehatan Angkatan Darat (Maret 2026)',
     'education.1.h3': 'Pharmaceutical Distribution Intern di PT Mitra Berkah Farmasi (MBF) (Februari 2026)',
-    'education.1.h4': 'Clinical Pharmacy Intern di Rumah Sakit Siloam Makassar (Januari 2026)',
+    'education.1.h4': 'Primary Healthcare Pharmacy Intern di Puskesmas Tamalate (Februari 2026)',
+    'education.1.h5': 'Clinical Pharmacy Intern di Rumah Sakit Siloam Makassar (Januari 2026)',
 
     'education.2.institution': 'Universitas Muslim Indonesia',
     'education.2.program': 'Sarjana Farmasi',
@@ -113,8 +114,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'education.2.caption': 'Wisuda Sarjana Farmasi',
     'education.2.h1': 'Asisten Laboratorium Farmaseutik (2024–2025)',
     'education.2.h2': 'Mendampingi praktikum Teknologi Sediaan Semisolida, Padat, dan Steril',
-    'education.2.h3': 'Kuliah Kerja Nyata (KKN) di RSUD Daya Makassar (Januari 2025)',
-    'education.2.h4': 'Pharmacy Assistant Intern di Rumah Sakit Prima Husada Sengkang (Agustus 2023)',
+    'education.2.h3': 'Asisten Laboratorium Praktikum Compounding & Dispensing Sediaan Farmasi (2024–2025)',
+    'education.2.h4': 'Kuliah Kerja Nyata (KKN) di RSUD Daya Makassar (Januari 2025)',
+    'education.2.h5': 'Pharmacy Assistant Intern di Rumah Sakit Prima Husada Sengkang (Agustus 2023)',
 
     // ── Work Section
     'work.label': 'PENGALAMAN MAGANG',
@@ -226,6 +228,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'academic.tag3': 'Sediaan Steril',
     'academic.tag4': 'Praktikum',
     'academic.highlights': 'Tugas Utama',
+    'academic2.role': 'Asisten Laboratorium Praktikum Compounding & Dispensing Sediaan Farmasi',
+    'academic2.period': '2024 — 2025',
+    'academic2.b1': 'Membantu pelaksanaan praktikum compounding dan dispensing sediaan farmasi sesuai panduan praktikum.',
+    'academic2.b2': 'Membimbing mahasiswa dalam proses peracikan, penyiapan, dan penyerahan sediaan farmasi sesuai prosedur yang ditetapkan.',
+    'academic2.b3': 'Membantu menyiapkan alat dan bahan praktikum serta memastikan kebersihan dan kerapian area laboratorium.',
+    'academic2.b4': 'Mendukung kelancaran kegiatan praktikum dan mengingatkan mahasiswa untuk menerapkan prosedur kerja yang aman dan tepat.',
+    'academic2.tag1': 'Compounding',
+    'academic2.tag2': 'Dispensing',
+    'academic2.tag3': 'Sediaan Farmasi',
+    'academic2.tag4': 'Praktikum',
 
     // ── Skills Section
     'skills.label': 'KOMPETENSI KEFARMASIAN',
@@ -383,7 +395,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'education.1.h1': 'Community Pharmacy Intern at Apotek Wahdah Abdesir (April–May 2026)',
     'education.1.h2': 'Industrial Pharmacy Intern at Lembaga Farmasi Pusat Kesehatan Angkatan Darat (March 2026)',
     'education.1.h3': 'Pharmaceutical Distribution Intern at PT Mitra Berkah Farmasi (MBF) (February 2026)',
-    'education.1.h4': 'Clinical Pharmacy Intern at Rumah Sakit Siloam Makassar (January 2026)',
+    'education.1.h4': 'Primary Healthcare Pharmacy Intern at Puskesmas Tamalate (February 2026)',
+    'education.1.h5': 'Clinical Pharmacy Intern at Rumah Sakit Siloam Makassar (January 2026)',
 
     'education.2.institution': 'Universitas Muslim Indonesia',
     'education.2.program': 'Bachelor of Pharmacy',
@@ -396,8 +409,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'education.2.caption': 'Bachelor of Pharmacy Graduation',
     'education.2.h1': 'Pharmaceutics Laboratory Assistant (2024–2025)',
     'education.2.h2': 'Assisting practicals in Semisolid, Solid, and Sterile Dosage Form Technology',
-    'education.2.h3': 'Community Service Program (KKN) at RSUD Daya Makassar (January 2025)',
-    'education.2.h4': 'Pharmacy Assistant Intern at Rumah Sakit Prima Husada Sengkang (August 2023)',
+    'education.2.h3': 'Compounding & Dispensing of Pharmaceutical Preparations Practical Laboratory Assistant (2024–2025)',
+    'education.2.h4': 'Community Service Program (KKN) at RSUD Daya Makassar (January 2025)',
+    'education.2.h5': 'Pharmacy Assistant Intern at Rumah Sakit Prima Husada Sengkang (August 2023)',
 
     // ── Work Section
     'work.label': 'INTERNSHIP EXPERIENCE',
@@ -509,6 +523,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'academic.tag3': 'Sterile Dosage Forms',
     'academic.tag4': 'Practicals',
     'academic.highlights': 'Main Duties',
+    'academic2.role': 'Compounding & Dispensing of Pharmaceutical Preparations Practical Laboratory Assistant',
+    'academic2.period': '2024 — 2025',
+    'academic2.b1': 'Assisted in running the compounding and dispensing of pharmaceutical preparations practicals according to the practical guide.',
+    'academic2.b2': 'Guided students through the compounding, preparation, and handover of pharmaceutical preparations according to the set procedures.',
+    'academic2.b3': 'Helped prepare practical equipment and materials and ensured the laboratory area was clean and tidy.',
+    'academic2.b4': 'Supported the smooth running of practical activities and reminded students to apply safe and proper work procedures.',
+    'academic2.tag1': 'Compounding',
+    'academic2.tag2': 'Dispensing',
+    'academic2.tag3': 'Pharmaceutical Preparations',
+    'academic2.tag4': 'Practicals',
 
     // ── Skills Section
     'skills.label': 'PHARMACEUTICAL COMPETENCIES',

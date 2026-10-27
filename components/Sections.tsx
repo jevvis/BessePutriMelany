@@ -646,6 +646,7 @@ export function EducationSection() {
         t('education.1.h2'),
         t('education.1.h3'),
         t('education.1.h4'),
+        t('education.1.h5'),
       ],
     },
     {
@@ -668,6 +669,7 @@ export function EducationSection() {
         t('education.2.h2'),
         t('education.2.h3'),
         t('education.2.h4'),
+        t('education.2.h5'),
       ],
     },
   ]
@@ -820,8 +822,28 @@ export function EducationSection() {
 
 export function AcademicSection() {
   const { t } = useLanguage()
-  const duties = [t('academic.b1'), t('academic.b2'), t('academic.b3'), t('academic.b4')]
-  const tags = [t('academic.tag1'), t('academic.tag2'), t('academic.tag3'), t('academic.tag4')]
+  // Dua pengalaman asisten laboratorium sesuai CV
+  const entries = [
+    {
+      period: t('academic.period'),
+      role: t('academic.role'),
+      duties: [t('academic.b1'), t('academic.b2'), t('academic.b3'), t('academic.b4')],
+      tags: [t('academic.tag1'), t('academic.tag2'), t('academic.tag3'), t('academic.tag4')],
+      icon: <path d="M9 3v2M15 3v2M10 5a2 2 0 0 0-2 2v7.74a2 2 0 0 1-.2.87L5.33 21h13.34l-2.47-5.39a2 2 0 0 1-.2-.87V7a2 2 0 0 0-2-2h-4z" />,
+    },
+    {
+      period: t('academic2.period'),
+      role: t('academic2.role'),
+      duties: [t('academic2.b1'), t('academic2.b2'), t('academic2.b3'), t('academic2.b4')],
+      tags: [t('academic2.tag1'), t('academic2.tag2'), t('academic2.tag3'), t('academic2.tag4')],
+      icon: (
+        <>
+          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z" />
+          <path d="m8.5 8.5 7 7" />
+        </>
+      ),
+    },
+  ]
 
   return (
     <section id="academic" className="relative py-24 px-4 md:px-8 overflow-hidden font-sans">
@@ -842,22 +864,24 @@ export function AcademicSection() {
           </h2>
         </div>
 
-        {/* Pengalaman akademik sesuai CV: Asisten Laboratorium Farmaseutik */}
-        <div className="bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--muted)] rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 shadow-sm hover:shadow-xl">
+        {/* Pengalaman akademik sesuai CV: dua posisi asisten laboratorium */}
+        <div className="flex flex-col gap-10 md:gap-14">
+        {entries.map((entry, eIdx) => (
+        <div key={eIdx} className="bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--muted)] rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-300 shadow-sm hover:shadow-xl">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-14 items-stretch">
             <div className="w-full lg:w-5/12 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 shrink-0">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 3v2M15 3v2M10 5a2 2 0 0 0-2 2v7.74a2 2 0 0 1-.2.87L5.33 21h13.34l-2.47-5.39a2 2 0 0 1-.2-.87V7a2 2 0 0 0-2-2h-4z" />
+                    {entry.icon}
                   </svg>
                 </div>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-emerald-500 font-semibold">{t('academic.period')}</span>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-emerald-500 font-semibold">{entry.period}</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">{t('academic.role')}</h3>
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">{entry.role}</h3>
               <p className="text-sm font-semibold text-[var(--muted)] mb-6">{t('academic.campus')}</p>
               <div className="flex flex-wrap gap-2">
-                {tags.map((c) => (
+                {entry.tags.map((c) => (
                   <span key={c} className="px-3 py-1.5 rounded-full bg-[var(--background)] border border-[var(--card-border)] text-xs font-semibold text-[var(--foreground)]">
                     {c}
                   </span>
@@ -868,7 +892,7 @@ export function AcademicSection() {
             <div className="w-full lg:w-7/12 lg:pl-12 lg:border-l border-[var(--card-border)]">
               <p className="text-[10px] tracking-widest uppercase font-semibold text-[var(--muted)] mb-5">{t('academic.highlights')}</p>
               <div className="space-y-4">
-                {duties.map((item, i) => (
+                {entry.duties.map((item, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm md:text-base text-[var(--foreground)] opacity-90 leading-relaxed">
                     <svg className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -879,6 +903,8 @@ export function AcademicSection() {
               </div>
             </div>
           </div>
+        </div>
+        ))}
         </div>
       </div>
     </section>

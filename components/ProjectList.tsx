@@ -231,6 +231,22 @@ const projects = [
     techStack: ["Laporan Praktikum", "Keselamatan Lab", "Pembimbingan"],
     link: '#',
   },
+  {
+    number: '29',
+    title: "Pendampingan Praktikum Compounding & Dispensing Sediaan Farmasi",
+    description: "Membantu pelaksanaan praktikum compounding dan dispensing sediaan farmasi sesuai panduan praktikum, serta membimbing mahasiswa dalam proses peracikan, penyiapan, dan penyerahan sediaan farmasi sesuai prosedur yang ditetapkan.",
+    framework: "PENGALAMAN AKADEMIK — ASISTEN LABORATORIUM PRAKTIKUM COMPOUNDING & DISPENSING, UNIVERSITAS MUSLIM INDONESIA (2024–2025)",
+    techStack: ["Compounding", "Dispensing", "Sediaan Farmasi"],
+    link: '#',
+  },
+  {
+    number: '30',
+    title: "Persiapan Alat, Bahan & Kerapian Laboratorium",
+    description: "Membantu menyiapkan alat dan bahan praktikum serta memastikan kebersihan dan kerapian area laboratorium, dan mendukung kelancaran kegiatan praktikum dengan mengingatkan mahasiswa menerapkan prosedur kerja yang aman dan tepat.",
+    framework: "PENGALAMAN AKADEMIK — ASISTEN LABORATORIUM PRAKTIKUM COMPOUNDING & DISPENSING, UNIVERSITAS MUSLIM INDONESIA (2024–2025)",
+    techStack: ["Persiapan Praktikum", "Kebersihan Lab", "Prosedur Aman"],
+    link: '#',
+  },
 ]
 
 export default function ProjectList() {

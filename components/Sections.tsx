@@ -1018,3 +1018,180 @@ export function PersonalSkillsSection() {
     </section>
   )
 }
+
+export function AwardsSection() {
+  const { t } = useLanguage()
+  const [activeAwardIndex, setActiveAwardIndex] = useState(0)
+
+  const certificationsList = [1, 2, 3, 4].map((n) => ({
+    id: n,
+    title: t(`award.${n}.title`),
+    issuer: t(`award.${n}.issuer`),
+    year: t(`award.${n}.date`),
+    category: t(`award.${n}.cat`),
+    description: t(`award.${n}.desc`),
+    image: ['/projects/sertifikat-apotek.jpg', '/projects/sertifikat-industri.jpg', '/projects/sertifikat-pbf.jpg', '/projects/sertifikat-rs.jpg'][n - 1],
+    fit: 'contain' as const, // sertifikat tampil utuh tanpa terpotong
+  }))
+
+  const getCardStyle = (offset: number) => {
+    if (offset === 0) {
+      return {
+        transform: 'translate(-50%, -50%) scale(1)',
+        zIndex: 30,
+        opacity: 1,
+        filter: 'brightness(1)',
+        cursor: 'default',
+      }
+    }
+    if (offset === 1) {
+      return {
+        transform: 'translate(calc(-50% + 42%), -50%) scale(0.85)',
+        zIndex: 20,
+        opacity: 0.75,
+        filter: 'brightness(0.72)',
+        cursor: 'pointer',
+      }
+    }
+    if (offset === -1) {
+      return {
+        transform: 'translate(calc(-50% - 42%), -50%) scale(0.85)',
+        zIndex: 20,
+        opacity: 0.75,
+        filter: 'brightness(0.72)',
+        cursor: 'pointer',
+      }
+    }
+    if (offset === 2) {
+      return {
+        transform: 'translate(calc(-50% + 76%), -50%) scale(0.72)',
+        zIndex: 10,
+        opacity: 0.45,
+        filter: 'brightness(0.52)',
+        cursor: 'pointer',
+      }
+    }
+    if (offset === -2) {
+      return {
+        transform: 'translate(calc(-50% - 76%), -50%) scale(0.72)',
+        zIndex: 10,
+        opacity: 0.45,
+        filter: 'brightness(0.52)',
+        cursor: 'pointer',
+      }
+    }
+    return {
+      transform: 'translate(-50%, -50%) scale(0.5)',
+      zIndex: 0,
+      opacity: 0,
+      filter: 'brightness(0.3)',
+      cursor: 'pointer',
+    }
+  }
+
+  return (
+    <section id="awards" className="relative py-20 px-4 md:px-8 overflow-hidden font-sans">
+      {/* Background Waves */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.1] z-0">
+        <svg className="w-full h-full" viewBox="0 0 1440 800" preserveAspectRatio="none" fill="none" stroke="currentColor">
+          <path d="M0 200C300 100 400 300 720 200C1040 100 1140 300 1440 200" strokeWidth="2" />
+          <path d="M0 400C300 300 400 500 720 400C1040 300 1140 500 1440 400" strokeWidth="2" />
+          <path d="M0 600C300 500 400 700 720 600C1040 500 1140 700 1440 600" strokeWidth="2" />
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Header - Identik dengan susunan Work Gallery */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-8 gap-4">
+          <div>
+            <p className="text-xs tracking-[0.3em] uppercase text-[var(--muted)] mb-3 font-semibold font-sans">
+              {t('awards.label')}
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-3 font-sans">
+              <TypewriterTitle text={t('awards.title')} />
+            </h2>
+            <p className="text-[var(--muted)] text-sm max-w-md font-sans">
+              {t('awards.sub')}
+            </p>
+          </div>
+          <a
+            href={certificationsList[activeAwardIndex].image}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--foreground)] text-[var(--background)] text-sm font-medium hover:opacity-90 transition-colors shrink-0"
+          >
+            {t('awards.openDoc')}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        </div>
+
+        {/* 3D Cover Flow Carousel - Lurus Sempurna Tanpa Miring, Jarak Rapat */}
+        <div className="relative w-full h-[200px] sm:h-[250px] md:h-[290px] lg:h-[325px] flex items-center justify-center overflow-visible mt-4 mb-2 select-none">
+          {certificationsList.map((item, index) => {
+            let offset = index - activeAwardIndex
+            const total = certificationsList.length
+            while (offset > total / 2) offset -= total
+            while (offset < -total / 2) offset += total
+
+            const isActive = offset === 0
+            const style = getCardStyle(offset)
+
+            return (
+              <div
+                key={item.id}
+                onClick={() => setActiveAwardIndex(index)}
+                className="absolute top-1/2 left-1/2 w-[70%] sm:w-[56%] md:w-[48%] lg:w-[42%] max-w-[490px] transition-all duration-500 ease-out select-none"
+                style={style}
+              >
+                <div
+                  className={`rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 ${
+                    isActive
+                      ? 'border-[var(--card-border)] ring-1 ring-[var(--card-border)] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)]'
+                      : 'border-white/10 hover:brightness-125 shadow-xl'
+                  }`}
+                >
+                  <div className={`aspect-[16/10] flex items-center justify-center overflow-hidden ${'bg-white'}`}>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      draggable={false}
+                      className={`w-full h-full select-none object-center ${item.fit === 'contain' ? 'object-contain' : 'object-cover'}`}
+                    />
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Active certificate info - Berjarak Pas & Rapat di Bawah Foto */}
+        <div className="text-center mt-3 sm:mt-4 max-w-3xl mx-auto px-4 font-sans">
+          <p className="text-[11px] font-sans tracking-widest uppercase text-emerald-500 font-semibold mb-1.5">
+            {certificationsList[activeAwardIndex].category} • {certificationsList[activeAwardIndex].year}
+          </p>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 font-sans text-[var(--foreground)]">
+            {certificationsList[activeAwardIndex].title}
+          </h3>
+          <p className="text-xs md:text-sm font-semibold text-[var(--muted)] mb-2 font-sans">
+            {t('awards.issuer')}: {certificationsList[activeAwardIndex].issuer}
+          </p>
+          <p className="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-4 max-w-2xl mx-auto font-sans">
+            {certificationsList[activeAwardIndex].description}
+          </p>
+          <a
+            href={certificationsList[activeAwardIndex].image}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold underline underline-offset-4 hover:opacity-75 transition-opacity font-sans text-[var(--foreground)]"
+          >
+            {t('awards.viewOriginal')}
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}

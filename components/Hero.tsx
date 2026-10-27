@@ -58,12 +58,6 @@ export default function Hero() {
         <p className="mt-3 text-xs lg:text-[13px] leading-relaxed text-[var(--muted)]">{t('hero.tagline')}</p>
       </div>
 
-      {/* Versi HP: sapaan + nama di antara kata besar dan kepala foto */}
-      <div className="hero-anim absolute inset-x-0 top-[calc(11svh+5.5rem)] z-20 md:hidden text-center pointer-events-none px-4" style={{ '--d': '1000ms' } as React.CSSProperties}>
-        <p className="font-script text-2xl font-bold text-emerald-600 dark:text-emerald-400 leading-none">{t('hero.hey')}</p>
-        <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">Besse Putri Melany Alza</h1>
-      </div>
-
       {/* Keterangan kecil kiri-bawah */}
       <div className="hero-anim absolute left-[4vw] lg:left-[6vw] bottom-8 2xl:left-auto 2xl:right-1/2 2xl:mr-[280px] 2xl:w-[300px] z-20 hidden md:block pointer-events-none text-[9px] lg:text-[10px] tracking-[0.2em] font-semibold uppercase text-[var(--muted)] leading-relaxed" style={{ '--d': '1200ms' } as React.CSSProperties}>
         <p>{t('hero.based1')}</p>
@@ -86,8 +80,14 @@ export default function Hero() {
           onMouseMove={handleMouseMove}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="relative w-[150vw] sm:w-[440px] md:w-[560px] lg:w-[680px] xl:w-[760px] max-w-none sm:max-w-[92vw] cursor-pointer perspective-[1200px] select-none"
+          className="relative w-[150vw] translate-y-[max(0px,calc(128.6vw_-_89svh_+_9.8rem))] sm:translate-y-0 sm:w-[440px] md:w-[560px] lg:w-[680px] xl:w-[760px] max-w-none sm:max-w-[92vw] cursor-pointer perspective-[1200px] select-none"
         >
+          {/* Versi HP: sapaan + nama tepat di atas kepala foto (tidak pernah menimpa foto; foto turun bila layar pendek) */}
+          <div className="hero-anim absolute inset-x-0 bottom-full mb-1 z-20 md:hidden text-center pointer-events-none px-4" style={{ '--d': '1000ms' } as React.CSSProperties}>
+            <p className="font-script text-2xl font-bold text-emerald-600 dark:text-emerald-400 leading-none">{t('hero.hey')}</p>
+            <h1 className="text-2xl font-bold tracking-tight text-[var(--foreground)]">Besse Putri Melany Alza</h1>
+          </div>
+
           {/* Ambient Aura / Glow Backdrop */}
           <div
             className={`absolute inset-0 pointer-events-none rounded-full blur-3xl transition-all duration-700 ease-out ${

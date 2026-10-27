@@ -33,7 +33,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // ── About Section
     'about.label': 'TENTANG SAYA',
-    'about.title': 'Apoteker Profesional.',
+    'about.title': 'Apoteker Profesional. Universitas Muslim Indonesia.',
     'about.ipk': 'IPK Profesi',
     'about.ipk2': 'IPK S1',
     'about.year': 'Lulus Profesi',
@@ -316,7 +316,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // ── About Section
     'about.label': 'ABOUT ME',
-    'about.title': 'Professional Pharmacist.',
+    'about.title': 'Professional Pharmacist. Universitas Muslim Indonesia.',
     'about.ipk': 'Pharmacist GPA',
     'about.ipk2': "Bachelor's GPA",
     'about.year': 'Graduated',
